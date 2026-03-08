@@ -1,4 +1,4 @@
-# v2.4.2
+# v2.5.1
 
 * Fixed Geode v5 installation error by migrating `mod.json` dependencies to the new object format.
 * Updated dependency fields from deprecated `importance` to `required`.
