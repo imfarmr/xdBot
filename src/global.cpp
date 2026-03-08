@@ -480,5 +480,5 @@ $execute{
 
   g.macro.author = "N/A";
   g.macro.description = "N/A";
-  g.macro.gameVersion = 2.206;
+  g.macro.gameVersion = 2.2081;
 };
