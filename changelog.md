@@ -7,7 +7,7 @@
 * Updated multiple hook signatures for current bindings (`processCommands`, keyboard dispatch callback args).
 * Replaced removed `CCARRAY_FOREACH` usage with `CCArrayExt` iteration.
 * Migrated async file picker usage from `.listen(...)` to `async::spawn(...)` callback flow.
-* Updated popup compatibility for Geode v5 (`Popup` non-template changes) across xdBot UI layers.
+* Updated popup compatibility for Geode v5 (`Popup` non-template changes) across ReBot UI layers.
 * Updated text input label access for current bindings (`m_textLabel` replacement).
 * Fixed build issues from removed/renamed PlayerObject fields in practice fixes for current GD bindings.
 * gn pookies i kid u not i hate robtop james for breaking mods and geode after update
@@ -127,7 +127,7 @@
 * Swapped positions of sfx and music volume in render settings.
 * Changed discord server popup message.
 * Re-added .gdr save toggle.
-* Re-added xdBot menu button in mod settings.
+* Re-added ReBot menu button in mod settings.
 * Moved Show Trajectory extra settings to its own UI.
 * Moved Auto Stop Playing setting to more settings.
 * Moved Lock Delta setting to more settings.
@@ -426,7 +426,7 @@
 * Added Show Trajectory.
 * Added Frame Offset setting.
 * Added Customizable Keybinds.
-* Plus every feature from xdBot v1 (except frame fixes).
+* Plus every feature from ReBot v1 (except frame fixes).
 
 # v1.6.1
 
@@ -497,7 +497,7 @@
  * Fixed occasional crash on restart.
  * Fixed macros ignoring frame fixes when loaded.
  * Made it so speedhack sets to 1 when you play a macro to avoid confusion.
- * Made it so xdBot button always appears at the end screen if the setting is enabled.
+ * Made it so ReBot button always appears at the end screen if the setting is enabled.
 
 # v1.4.5
 

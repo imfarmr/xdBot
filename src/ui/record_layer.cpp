@@ -241,7 +241,7 @@ void RecordLayer::togglePlaying(CCObject*) {
         g.currentAction = 0;
         g.currentFrameFix = 0;
 
-        g.macro.xdBotMacro = g.macro.botInfo.name == "xdBot";
+        g.macro.isReBotMacro = isReBotFamilyName(g.macro.botInfo.name);
         
         PlayLayer* pl = PlayLayer::get();
 
@@ -465,7 +465,7 @@ void RecordLayer::toggleSetting(CCObject* obj) {
         }
 
         if (!value)
-            Notification::create("xdBot Button is disabled.", NotificationIcon::Warning)->show();
+            Notification::create("ReBot button is disabled.", NotificationIcon::Warning)->show();
     }
 }
 
@@ -473,7 +473,7 @@ void RecordLayer::showKeybindsWarning() {
     if (!mod->setSavedValue("opened_keybinds", true))
         FLAlertLayer::create(
             "Warning",
-            "Scroll down to find xdBot's keybinds",
+            "Scroll down to find ReBot's keybinds",
             "Ok"
         )->show();
 }
@@ -496,10 +496,10 @@ void RecordLayer::openKeybinds(CCObject*) {
     CCNode* contentLayer = scrollLayer->getChildByID("content-layer");
     if (!contentLayer) return showKeybindsWarning();
 
-    CCNode* xdBot = contentLayer->getChildByID("xdBot");
-    if (!xdBot) return showKeybindsWarning();
+    CCNode* reBot = contentLayer->getChildByID("ReBot");
+    if (!reBot) return showKeybindsWarning();
 
-    contentLayer->setPositionY(xdBot->getPositionY() - 118);
+    contentLayer->setPositionY(reBot->getPositionY() - 118);
 
 #else
 
@@ -588,7 +588,7 @@ bool RecordLayer::setup() {
     CCSprite* spriteOn = CCSprite::createWithSpriteFrameName("GJ_checkOn_001.png");
     CCSprite* spriteOff = CCSprite::createWithSpriteFrameName("GJ_checkOff_001.png");
 
-    CCLabelBMFont* versionLabel = CCLabelBMFont::create(("xdBot " + xdBotVersion).c_str(), "chatFont.fnt");
+    CCLabelBMFont* versionLabel = CCLabelBMFont::create(("ReBot " + reBotVersion).c_str(), "chatFont.fnt");
     versionLabel->setOpacity(63);
     versionLabel->setPosition(ccp(-217, -125));
     versionLabel->setAnchorPoint({ 0, 0.5 });

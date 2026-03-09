@@ -707,7 +707,7 @@ void MacroCell::handleLoad() {
 	g.restart = true;
 	g.macro.canChangeFPS = false;
 
-    g.macro.xdBotMacro = g.macro.botInfo.name == "xdBot";
+    g.macro.isReBotMacro = isReBotFamilyName(g.macro.botInfo.name);
 
 	loadLayer->keyBackClicked();
 

@@ -151,7 +151,7 @@ $execute{
         "Open Menu",
         "Open Menu.",
         { Keybind::create(KEY_F, Modifier::Alt) },
-        "xdBot",
+        "ReBot",
         false
     });
 
@@ -160,7 +160,7 @@ $execute{
         "Record macro",
         "Toggles recording.",
         { Keybind::create(KEY_G, Modifier::Alt) },
-        "xdBot",
+        "ReBot",
         false
     });
 
@@ -169,7 +169,7 @@ $execute{
       "Play macro",
       "Toggles playing.",
       { Keybind::create(KEY_H, Modifier::Alt) },
-      "xdBot",
+      "ReBot",
         false
     });
 
@@ -178,7 +178,7 @@ $execute{
       "Speedhack",
       "Toggles speedhack.",
       { Keybind::create(KEY_S, Modifier::Alt) },
-      "xdBot",
+      "ReBot",
         false
     });
 
@@ -187,7 +187,7 @@ $execute{
       "NoClip",
       "Toggles NoClip.",
       { Keybind::create(KEY_N, Modifier::Alt) },
-      "xdBot",
+      "ReBot",
         false
     });
 
@@ -196,7 +196,7 @@ $execute{
       "Toggle Frame Stepper",
       "Toggles frame stepper..",
       { Keybind::create(KEY_C, Modifier::Alt) },
-      "xdBot",
+      "ReBot",
       false
     });
 
@@ -205,7 +205,7 @@ $execute{
       "Advance frame",
       "Advances one frame if frame stepper is on.",
       { Keybind::create(KEY_V) },
-      "xdBot"
+      "ReBot"
     });
 
     bm->setRepeatOptionsFor("step_frame"_spr, { true, 10, 450 });
@@ -215,7 +215,7 @@ $execute{
       "Show Trajectory",
       "Toggles Show Trajectory.",
       { Keybind::create(KEY_T, Modifier::Alt) },
-      "xdBot"
+      "ReBot"
     });
 
     bm->registerBindable({
@@ -223,7 +223,7 @@ $execute{
       "Render",
       "Toggles rendering.",
       { Keybind::create(KEY_P, Modifier::Alt) },
-      "xdBot",
+      "ReBot",
       false
     });
 

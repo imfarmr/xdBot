@@ -171,7 +171,7 @@ int Global::getCurrentFrame(bool editor) {
   int frame;
   // levelTime = pl->m_gameState.m_levelTime;
 
-  if (!g.macro.xdBotMacro && g.state == state::playing) {
+  if (!g.macro.isReBotMacro && g.state == state::playing) {
     frame = pl->m_gameState.m_currentProgress;
   }
   else {

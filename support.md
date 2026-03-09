@@ -1,1 +1,1 @@
-Donete to me in my kofi [here](https://ko-fi.com/zilko)
+Support imfarmr on GitHub [here](https://github.com/imfarmr).

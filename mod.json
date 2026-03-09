@@ -5,9 +5,9 @@
 		"android": "2.2081"
 	},
 	"version": "2.5.1",
-	"id": "zilko.xdbot",
-	"name": "xdBot",
-	"developer": "Zilko",
+	"id": "imfarmr.rebot",
+	"name": "ReBot",
+	"developer": "imfarmr",
 	"description": "Best Free Bot fr",
 	"dependencies": {
 		"geode.custom-keybinds": {
@@ -91,7 +91,7 @@
 		},
 		"level_settings_button": {
 			"name": "Show Button At Settings",
-			"description": "Shows the xdBot button in the level settings layer.",
+			"description": "Shows the ReBot button in the level settings layer.",
 			"type": "bool",
 			"default": false
 		},
@@ -141,7 +141,7 @@
             "resources/default_release_right.mp3"
         ]
     },
-	"links": { "source": "https://github.com/imfarmr/xdBot", "community": "https://discord.gg/w6yvdzVzBd" },
+	"links": { "source": "https://github.com/imfarmr/ReBot", "community": "https://discord.gg/w6yvdzVzBd" },
 	"tags": ["gameplay", "utility", "cheat"]
 
 }
