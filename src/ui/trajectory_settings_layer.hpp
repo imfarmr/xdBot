@@ -126,7 +126,7 @@ private:
 		popup->show();
 	}
 
-	void updateColor() {
+	void updateColor() override {
 		ShowTrajectory& t = ShowTrajectory::get();
 		t.color1 = ccc4FFromccc3B(color1->getColor());
 		t.color2 = ccc4FFromccc3B(color2->getColor());

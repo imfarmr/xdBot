@@ -134,17 +134,7 @@ void RecordLayer::openLoadMacro(CCObject*) {
 
 void RecordLayer::openRecentMacro(CCObject* obj) {
     auto recent = Utils::getRecentMacros();
-    auto id = static_cast<CCNode*>(obj)->getID();
-
-    size_t index = 0;
-    auto split = id.find_last_of('-');
-    if (split == std::string::npos)
-        return;
-
-    if (auto parsed = numFromString<size_t>(id.substr(split + 1)); !parsed)
-        return;
-    else
-        index = parsed.unwrap();
+    size_t index = static_cast<size_t>(static_cast<CCNode*>(obj)->getTag());
 
     if (index >= recent.size())
         return;
@@ -248,7 +238,7 @@ void RecordLayer::refreshRecentMacros() {
 
         auto button = CCMenuItemSpriteExtra::create(bg, this, menu_selector(RecordLayer::openRecentMacro));
         button->setPosition({ i == 0 ? -154.f : -80.f, 10.f });
-        button->setID(fmt::format("recent-macro-{}", i).c_str());
+        button->setTag(static_cast<int>(i));
         recentMenu->addChild(button);
     }
 }
