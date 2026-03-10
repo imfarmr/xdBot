@@ -91,4 +91,6 @@ public:
 	void onImportMacro(CCObject*);
 
 	void updateSort(CCObject*);
+
+	void closeOnNextFrame(float);
 };

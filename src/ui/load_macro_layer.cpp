@@ -26,6 +26,13 @@ class $modify(CCMenu) {
 };
 
 void LoadMacroLayer::open(CompatPopup<>* layer, CompatPopup<>* layer2, bool autosaves) {
+	CCScene* scene = CCDirector::sharedDirector()->getRunningScene();
+	if (LoadMacroLayer* existing = scene->getChildByType<LoadMacroLayer>(0)) {
+		existing->setKeypadEnabled(false);
+		existing->setTouchEnabled(false);
+		existing->removeFromParentAndCleanup(true);
+	}
+
 	std::filesystem::path path = Mod::get()->getSettingValue<std::filesystem::path>("macros_folder");
 
 	if (!std::filesystem::exists(path)) {
@@ -43,6 +50,10 @@ void LoadMacroLayer::open(CompatPopup<>* layer, CompatPopup<>* layer2, bool auto
 	LoadMacroLayer* layerReal = create(layer, layer2, autosaves);
 	layerReal->m_noElasticity = true;
 	layerReal->show();
+}
+
+void LoadMacroLayer::closeOnNextFrame(float) {
+	this->keyBackClicked();
 }
 
 void LoadMacroLayer::textChanged(CCTextInputNode* node) {
@@ -695,7 +706,7 @@ void MacroCell::handleLoad() {
 
 		if (mergeLayer) {
 			typeinfo_cast<MacroEditLayer*>(mergeLayer)->mergeMacro(newMacro.inputs, players, static_cast<LoadMacroLayer*>(loadLayer)->owToggle->isToggled());
-			loadLayer->keyBackClicked();
+			static_cast<LoadMacroLayer*>(loadLayer)->scheduleOnce(schedule_selector(LoadMacroLayer::closeOnNextFrame), 0.0f);
 		}
 
 		return;
@@ -710,7 +721,7 @@ void MacroCell::handleLoad() {
     g.macro.isReBotMacro = isReBotFamilyName(g.macro.botInfo.name);
     Utils::pushRecentMacro(path);
 
-	loadLayer->keyBackClicked();
+	static_cast<LoadMacroLayer*>(loadLayer)->scheduleOnce(schedule_selector(LoadMacroLayer::closeOnNextFrame), 0.0f);
 
 	RecordLayer* newLayer = nullptr;
 
